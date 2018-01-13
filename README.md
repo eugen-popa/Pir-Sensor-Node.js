@@ -27,6 +27,7 @@ npm install onoff
 
 ## Usage
 
-[sensorp.pdf](https://github.com/eugen-popa/Pir-Sensor-Node.js/files/1628325/sensorp.pdf)
+
+![sensorp](https://user-images.githubusercontent.com/26783549/34906106-43ab177a-f81b-11e7-9aac-98e03c1a45a0.jpg)
 
 
