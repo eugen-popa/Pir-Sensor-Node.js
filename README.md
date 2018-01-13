@@ -23,6 +23,7 @@ onoff supports Node.js versions 0.10, 0.12, 4, 5, 6, 7, 8 and 9.
 
 ```
 npm install onoff
+npm install sleep
 ```
 
 ## Usage
