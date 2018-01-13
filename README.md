@@ -34,33 +34,8 @@ When the Motion is detected the LED should turn on
 This can be achieved with the following code:
 
 
-var sleep = require('sleep'); 
-var Gpio = require('onoff').Gpio; 
-var LED = new Gpio(18, 'out'); 
-var sensor = new Gpio(17, 'in', 'both'); 
 
-sensor.watch(function(err, value){ 
-	if (err){
-		console.log('error');
-		exit();
-	}
-	if(value == 1) { 
-		console.log('Motion Detected');
-		LED.writeSync(value); 
-		sleep.sleep(3); 
-	}
-	else if(value == 0) {
-		console.log('No Motion');
-		LED.writeSync(value); 
-		sleep.sleep(3);
-	}
-});
-
-function exit() {
-	LED.unexport();
-	sensor.unexport();
-	process.exit();
-}
+![sketch_bb](https://user-images.githubusercontent.com/26783549/34906211-8344f39a-f81d-11e7-8ee2-c909294d516e.jpg)
 
 
 ## API
