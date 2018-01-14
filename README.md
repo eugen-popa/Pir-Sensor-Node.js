@@ -29,7 +29,7 @@ npm install sleep
 ## Usage
 
 <img width="1118" alt="screen shot 2018-01-13 at 4 44 41 pm" src="https://user-images.githubusercontent.com/26783549/34911556-bc4d4e26-f881-11e7-8365-44c413ac00c3.png">
-![screen shot 2017-12-06 at 8 55 09 pm](https://user-images.githubusercontent.com/26783549/34906114-73fad46a-f81b-11e7-9356-4a9f3da67ecc.jpg)
+![screen shot 2017-12-06 at 8 55 09 pm](https://user-images.githubusercontent.com/26783549/34911640-73be967c-f883-11e7-92ed-d556ad520ed5.jpg)
 
 When the Motion is detected the LED should turn on
 This can be achieved with the following code:
