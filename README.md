@@ -28,16 +28,43 @@ npm install sleep
 
 ## Usage
 
-![sensorp](https://user-images.githubusercontent.com/26783549/34906106-43ab177a-f81b-11e7-9aac-98e03c1a45a0.jpg)
+<img width="1118" alt="screen shot 2018-01-13 at 4 44 41 pm" src="https://user-images.githubusercontent.com/26783549/34911556-bc4d4e26-f881-11e7-8365-44c413ac00c3.png">
 ![screen shot 2017-12-06 at 8 55 09 pm](https://user-images.githubusercontent.com/26783549/34906114-73fad46a-f81b-11e7-9356-4a9f3da67ecc.jpg)
 
 When the Motion is detected the LED should turn on
 This can be achieved with the following code:
+```
+var sleep = require('sleep'); 
+var Gpio = require('onoff').Gpio; 
+var LED = new Gpio(18, 'out');
+var sensor = new Gpio(17, 'in', 'both'); 
 
+sensor.watch(function(err, value){ 
+	if (err){
+		console.log('error');
+		exit();
+	}
+	if(value == 1) {  
+		console.log('Motion Detected');
+		LED.writeSync(value); 
+		sleep.sleep(3); 
+	}
+	else if(value == 0) {
+		console.log('No Motion');
+		LED.writeSync(value);  
+		sleep.sleep(3);
+	}
+});
 
+function exit() {
+	LED.unexport();
+	sensor.unexport();
+	process.exit();
+}
+```
 
-![sketch_bb](https://user-images.githubusercontent.com/26783549/34906211-8344f39a-f81d-11e7-8ee2-c909294d516e.jpg)
-
+## PIR MOTION SENSOR 
+mor information << https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/overview  >> 
 
 ## API
 
@@ -187,5 +214,5 @@ Reverse the effect of exporting the GPIO to userspace. A Gpio object should not
 be used after calling its unexport method.
 
 
-and same extara info( https://www.npmjs.com/package/pigpio)
+https://www.npmjs.com/package/pigpio
 https://www.w3schools.com/nodejs/nodejs_raspberrypi_gpio_intro.asp
