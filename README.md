@@ -87,7 +87,7 @@ mor information << https://learn.adafruit.com/pir-passive-infrared-proximity-mot
   * [unexport() - Reverse the effect of exporting the GPIO to userspace](https://github.com/fivdi/onoff#unexport)
   
   ##### Gpio(gpio, direction [, edge] [, options])
-  ``
+  ```
 - gpio - An unsigned integer specifying the GPIO number.
 - direction - A string specifying whether the GPIO should be configured as an
 input or output. The valid values are: 'in', 'out', 'high', and 'low'. If 'out'
@@ -105,9 +105,10 @@ If interrupts are not supported the edge argument should not be specified.
 - [options] - An optional options object.
 
 Returns a new Gpio object that can be used to access a GPIO.
-``
+
+```
 The following options are supported:
-``
+
 - activeLow - A boolean value specifying whether the values read from or
 written to the GPIO should be inverted. The interrupt generating edge for the
 GPIO also follow this this setting. The valid values for activeLow are true
@@ -119,9 +120,9 @@ should be passed to the onoff Gpio constructor function when exporting GPIOs
 to userspace. For example, pin 11 on the Raspberry Pi expansion header
 corresponds to GPIO17 in Raspbian Linux. 17 is therefore the number to pass
 to the onoff Gpio constructor when using pin 11 on the expansion header.
-``
+
 ##### read([callback])
-``
+
 - [callback] - An optional completion callback that gets two arguments (err,
 value), where err is reserved for an error object and value is the number 0
 or 1 and represents the state of the GPIO.
@@ -132,9 +133,9 @@ Note that most systems support readback of GPIOs configured as outputs. The
 read method can therefore be called for any GPIO, irrespective of whether it
 was configured as an input or an output. The Raspberry Pi and BeagleBone are
 examples of such systems.
-``
+
 ##### readSync()
-``
+
 Read GPIO value synchronously. Returns the number 0 or 1 to represent the
 state of the GPIO.
 
@@ -142,23 +143,23 @@ Note that most systems support readback of GPIOs configured as outputs. The
 readSync method can therefore be called for any GPIO, irrespective of whether
 it was configured as an input or an output. The Raspberry Pi and BeagleBone
 are examples of such systems.
-``
+
 ##### write(value[, callback])
-``
+
 - value - The number 0 or 1.
 - [callback] - An optional completion callback that gets one argument (err),
 where err is reserved for an error object.
 
 Write GPIO value asynchronously.
-``
+
 ##### writeSync(value)
-``
+
 - value - The number 0 or 1.
 
 Write GPIO value synchronously.
-``
+
 ##### watch(callback)
-``
+
 - callback - A callback that gets two arguments (err, value), where err is
 reserved for an error object and value is the number 0 or 1 and represents the
 state of the GPIO. The value can also be used to determine whether the
@@ -167,39 +168,39 @@ edge interrupt and a value of 1 implies a rising edge interrupt.
 
 Watch for hardware interrupts on the GPIO. The edge argument that was passed
 to the constructor determines which hardware interrupts to watch for.
-``
+
 ##### unwatch([callback])
-``
+
 - [callback] - The callback to remove.
 
 Stop watching for hardware interrupts on the GPIO. If callback is specified,
 only that particular callback is removed. Otherwise all callbacks are removed.
-``
+
 ##### unwatchAll()
-``
+
 Remove all hardware interrupt watchers for the GPIO.
-``
+
 ##### direction()
-``
+
 Returns the string 'in' or 'out' indicating whether the GPIO is an input or
 output.
-``
+
 ##### setDirection(direction)
-``
+
 - direction - A string specifying whether the GPIO should be configured as an
 input or output. The valid values are 'in' and 'out'.
 
 Set GPIO direction.
-``
+
 ##### edge()
-``
+
 Returns the string 'none', 'falling', 'rising', or 'both' indicating the
 interrupt generating edge or edges for the GPIO. Whether or not interrupts are
 supported is GPIO specific. If interrupts are not supported the edge method
 should not be used.
-``
+
 ##### setEdge(edge)
-``
+
 - edge - A string specifying the interrupt generating edge or edges for the
 GPIO. The valid values are: 'none', 'rising', 'falling' or 'both'. On Linux
 kernels prior to 3.13 it was possible for both inputs and outputs to generate
@@ -209,25 +210,25 @@ Whether or not interrupts are supported is GPIO specific. If interrupts are
 not supported the setEdge method should not be used.
 
 Set GPIO interrupt generating edge.
-``
+
 ##### activeLow()
-``
+
 Returns true or false indicating whether or not the values read from or written
 to the GPIO are inverted.
-``
+
 ##### setActiveLow(invert)
-``
+
 - invert - A boolean value specifying whether the values read from or written
 to the GPIO should be inverted. The interrupt generating edge for the GPIO also
 follow this this setting. The valid values for invert are true and false.
 Setting activeLow to true inverts. Optional, the default value is false.
 
 Set GPIO activeLow setting.
-``
+
 ##### unexport()
-``
+
 Reverse the effect of exporting the GPIO to userspace. A Gpio object should not
 be used after calling its unexport method.
-``
+
 https://www.npmjs.com/package/pigpio
 https://www.w3schools.com/nodejs/nodejs_raspberrypi_gpio_intro.asp
