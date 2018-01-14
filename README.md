@@ -28,8 +28,8 @@ npm install sleep
 
 ## Usage
 
-<img width="1118" alt="screen shot 2018-01-13 at 4 44 41 pm" src="https://user-images.githubusercontent.com/26783549/34911556-bc4d4e26-f881-11e7-8365-44c413ac00c3.png">
-![raspberry pi gpio](https://user-images.githubusercontent.com/26783549/34911652-ac371bbe-f883-11e7-9461-b3d6bb156016.jpg)
+<img width="1118" alt="screen shot 2018-01-13 at 4 44 41 pm" src="https://user-images.githubusercontent.com/26783549/34911666-da7a135a-f883-11e7-8273-cca8ba16a5df.png">
+<img width="946" alt="raspberry pi gpio" src="https://user-images.githubusercontent.com/26783549/34911670-eae9bff6-f883-11e7-8121-1af2855b7c1d.png">
 
 When the Motion is detected the LED should turn on
 This can be achieved with the following code:
